@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package analise;
+
+service ServicoAnalise {
+  rpc AnalisarTemperatura (DadosSensor) returns (ResultadoAnalise);
+}
+
+message DadosSensor {
+  string sala = 1;
+  float temperatura = 2;
+}
+
+message ResultadoAnalise {
+  string alerta = 1;
+  bool acao_recomendada = 2;
+}
